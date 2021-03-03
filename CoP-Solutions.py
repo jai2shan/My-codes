@@ -37,6 +37,7 @@ def timer(fn):
         print('Time taken to execute {} is {} secs'.format(fn.__name__, (time.time()-start)))
         return result
     return inner
+  
  
 ## Question 4:
 # Counter
@@ -49,3 +50,10 @@ def counter(fn):
         print('{} is executed {} times'.format(fn.__name__, count))
         return result
     return inner
+
+  
+def sub(a,b):
+  return a-b
+
+mysub = mylogger(sub, level = 50)
+mysub(2,3)
