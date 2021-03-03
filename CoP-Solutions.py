@@ -37,3 +37,15 @@ def timer(fn):
         print('Time taken to execute {} is {} secs'.format(fn.__name__, (time.time()-start)))
         return result
     return inner
+ 
+## Question 4:
+# Counter
+def counter(fn):
+    count = 0
+    def inner(*args,**kwargs):
+        nonlocal count
+        count= count+1
+        result = fn(*args, **kwargs)
+        print('{} is executed {} times'.format(fn.__name__, count))
+        return result
+    return inner
